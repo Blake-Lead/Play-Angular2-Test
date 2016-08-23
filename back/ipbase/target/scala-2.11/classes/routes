@@ -1,0 +1,16 @@
+# Routes
+
+GET     /                               controllers.ApplicationController.index
+
+GET     /addresses                      controllers.AddressController.findAll
+GET     /addresses/:id                  controllers.AddressController.find(id: Long)
+GET     /addresses/bygroup/:id          controllers.AddressController.findByGroup(id: Long)
+POST    /addresses                      controllers.AddressController.create
+PUT     /addresses                      controllers.AddressController.update
+DELETE  /addresses/:id                  controllers.AddressController.delete(id: Long)
+
+GET     /groups                         controllers.GroupController.findAll
+GET     /groups/:id                     controllers.GroupController.find(id: Long)
+POST    /groups                         controllers.GroupController.create
+PUT     /groups                         controllers.GroupController.update
+DELETE  /groups/:id                     controllers.GroupController.delete(id: Long)

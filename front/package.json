@@ -1,0 +1,41 @@
+{
+  "name": "afpa-app",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "webpack --progress && webpack-dev-server --inline --progress",
+    "serve:prod": "webpack -p --progress && webpack-dev-server --inline --progress",
+    "typings": "typings",
+    "postinstall": "typings install && tsd install marked",
+    "clean": "rm -rf dist/"
+  },
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.5",
+    "@angular/compiler": "^2.0.0-rc.5",
+    "@angular/core": "^2.0.0-rc.5",
+    "@angular/forms": "^0.3.0",
+    "@angular/http": "^2.0.0-rc.5",
+    "@angular/platform-browser": "^2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.5",
+    "@angular/router": "^3.0.0-rc.1",
+    "@angular/upgrade": "^2.0.0-rc.4",
+    "angular2-data-table": "^0.2.5",
+    "angular2-modal": "^2.0.0-beta.10",
+    "bootstrap": "^3.3.6",
+    "core-js": "^2.4.0",
+    "jquery": "^3.1.0",
+    "marked": "^0.3.6",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

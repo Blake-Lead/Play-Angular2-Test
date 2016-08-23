@@ -1,0 +1,4 @@
+2016-08-23 22:30:49,983 [INFO] from play.core.server.NettyServer in pool-4-thread-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-08-23 22:31:59,733 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'postgresql'
+2016-08-23 22:31:59,831 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [postgresql] connected at jdbc:postgresql://172.17.0.2:5432/wiki
+2016-08-23 22:32:00,096 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)

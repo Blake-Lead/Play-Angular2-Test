@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="col-md-6">
+    <!-- Category choice -->
+    <select id="select" name="select" [(ngModel)]="article.categoryId">
+      <option *ngFor="let category of categories" [value]="category.id">{{category?.tag}}</option>
+    </select>
+    <!-- Title & autor fields -->
+    <div class="input-group">
+      <span class="input-group-addon" id="title">Titre</span>
+      <input id="title" type="text" class="form-control" placeholder="Titre" aria-describedby="title" [(ngModel)]="article.title">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="author">Auteur</span>
+      <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
+    </div>
+    <!-- Save article -->
+    <div class="btn-group" role="group">
+    <button type="button" class="btn btn-success" (click)="saveArticle()">Enregistrer</button>
+      <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
+    </div>
+    <!-- Editor -->
+    <textarea id="rawtext" rows="20" cols="80" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
+
+  </div>
+
+  <!-- Markdown preview -->
+  <div class="col-md-6">
+    <span id="mdtext" [innerHTML]="articleMd"></span>
+  </div>
+</div>

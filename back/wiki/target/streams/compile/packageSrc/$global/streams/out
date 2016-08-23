@@ -1,0 +1,21 @@
+[0m[[0minfo[0m] [0mPackaging /data/Sandbox/afpa/back/wiki/target/scala-2.11/wiki_2.11-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	dao/ArticleDao.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/dao/ArticleDao.java[0m
+[0m[[0mdebug[0m] [0m	application.conf[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/conf/application.conf[0m
+[0m[[0mdebug[0m] [0m	controllers/CategoryController.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/controllers/CategoryController.java[0m
+[0m[[0mdebug[0m] [0m	routes[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/conf/routes[0m
+[0m[[0mdebug[0m] [0m	dao/CategoryDao.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/dao/CategoryDao.java[0m
+[0m[[0mdebug[0m] [0m	models/Category.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/models/Category.java[0m
+[0m[[0mdebug[0m] [0m	models/Article.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/models/Article.java[0m
+[0m[[0mdebug[0m] [0m	controllers/ArticleController.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/controllers/ArticleController.java[0m
+[0m[[0mdebug[0m] [0m	controllers/ApplicationController.java[0m
+[0m[[0mdebug[0m] [0m	  /data/Sandbox/afpa/back/wiki/app/controllers/ApplicationController.java[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

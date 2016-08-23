@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Create article button -->
+    <button type="button" class="btn btn-primary" (click)="createArticle()">Créer article</button>
+    <!-- Categories accordion -->
+    <div class="col-md-6">
+      <div class="list-group">
+        <div class="list-group-header">Categories</div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default" *ngFor="let category of categories">
+            <div class="panel-heading" role="tab">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion"
+                href="#collapse_{{category.id}}" aria-expanded="true" attr.aria-controls="collapse_{{category.id}}">
+                {{category.tag}}</a>
+              </h4>
+            </div>
+            <div id="collapse_{{category.id}}" class="panel-collapse collapse" role="tabpanel">
+              <div class="panel-body">
+                <button type="button" class="list-group-item" *ngFor="let article of getArticlesByCategory(category.id)"
+                (click)="gotoArticle(article.id)"><span class="badge">{{article.author}}</span>{{article.title}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Recent articles -->
+
+    <div class="row">
+      <div class="col-sm-3 col-md-2" *ngFor="let article of articles">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>{{article.title}}</h3>
+            <p [innerHTML]="parseMarkdown(article.body)"></p>
+            <p><a class="btn btn-primary" role="button" (click)="editArticle(article.id)">Editer</a>
+              <a class="btn btn-default" role="button" (click)="deleteArticle(article.id)">Supprimer</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

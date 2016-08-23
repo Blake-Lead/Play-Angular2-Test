@@ -1,15 +1,16 @@
-# Ignore Play! working directory #
-bin/
-/db
-.eclipse
-/lib/
-/logs/
-/modules
-/project/target
-/target
-tmp/
-test-result
-server.pid
-*.eml
-/dist/
-.cache
+# Wiki
+back/wiki/project
+back/wiki/target
+back/wiki/logs
+# Ipbase
+back/ipbase/project
+back/ipbase/target
+back/ipbase/logs
+# Registry
+back/registry/project
+back/registry/target
+back/registry/logs
+# UI
+front/dist
+front/node_modules
+front/typings

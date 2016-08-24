@@ -50,7 +50,7 @@ export class IpBaseService {
         .catch(err => Observable.throw(err.message));
     }
     createGroup(group: Group) {
-        return this.http.put(this.groupsUrl, group)
+        return this.http.post(this.groupsUrl, group)
         .map(resp => resp.json())
         .catch(err => err.message);
     }

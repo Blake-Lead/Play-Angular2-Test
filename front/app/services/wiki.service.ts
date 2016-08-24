@@ -50,7 +50,7 @@ export class WikiService {
         .catch(err => Observable.throw(err.message));
     }
     createCategory(category: Category) {
-        return this.http.put(this.categoriesUrl, category)
+        return this.http.post(this.categoriesUrl, category)
         .map(resp => resp.json())
         .catch(err => err.message);
     }

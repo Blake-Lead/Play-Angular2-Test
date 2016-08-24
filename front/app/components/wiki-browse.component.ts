@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {WikiService} from '../services/wiki.service';
-import {MarkedService} from '../services/marked.service';
-import {Router} from '@angular/router';
-import {Article} from '../models/article';
-import {Category} from '../models/category';
+import {ModalResult}       from 'ng2-bs3-modal/ng2-bs3-modal';
+import {WikiService}       from '../services/wiki.service';
+import {MarkedService}     from '../services/marked.service';
+import {Router}            from '@angular/router';
+import {Article}           from '../models/article';
+import {Category}          from '../models/category';
 
 @Component({
     selector: 'wiki',
@@ -13,10 +14,12 @@ export class WikiBrowseComponent implements OnInit {
 
     articles: Article[];
     categories: Category[];
+    category: Category;
 
     constructor(private wikiService: WikiService, private markedService: MarkedService, private router: Router) {
         this.articles = new Array<Article>();
         this.categories = new Array<Category>();
+        this.category = new Category;
     }
 
     ngOnInit() {
@@ -54,5 +57,15 @@ export class WikiBrowseComponent implements OnInit {
             location.reload();
         },
         error => console.log(error));
+    }
+
+    onCloseAddCategoryModal(result: ModalResult) {
+        this.wikiService.createCategory(this.category)
+        .subscribe(res => {
+            if (res === 'true') {
+                this.category = new Category;
+                window.location.reload();
+            }
+        }, err => console.log(err));
     }
 }

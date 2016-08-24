@@ -31,7 +31,8 @@ CREATE TABLE article (
 -- grant privileges
 GRANT ALL PRIVILEGES ON TABLE category TO afpauser;
 GRANT ALL PRIVILEGES ON TABLE article TO afpauser;
-
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public to afpauser;
+GRANT ALL PRIVILEGES ON SCHEMA public TO afpauser;
 
 ------------
 -- IPBASE --
@@ -62,11 +63,5 @@ CREATE TABLE address (
 -- grant privileges
 GRANT ALL PRIVILEGES ON TABLE agroup TO afpauser;
 GRANT ALL PRIVILEGES ON TABLE address TO afpauser;
-
-
------------------------------------------
--- privileges concerning all databases --
------------------------------------------
-
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public to afpauser;
 GRANT ALL PRIVILEGES ON SCHEMA public TO afpauser;

@@ -1,19 +1,25 @@
 <html>
 <head>
   <base href="/">
-  <title>afpa</title>
+  <title>Afpa CDI 2015</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="app/styles/bootstrap-darkly.min.css">
 </head>
 <body>
-  <my-app>Loading...</my-app>
+
+  <app>Loading...</app>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/core-js/client/shim.min.js"></script>
   <script src="node_modules/zone.js/dist/zone.min.js"></script>
   <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>System.import('app').catch(function(err){ console.error(err); });</script>
+
 </body>
 </html>

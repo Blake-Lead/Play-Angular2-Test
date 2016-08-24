@@ -20,7 +20,7 @@ To create a local Docker image of **wiki**, type :
 
 `sbt docker:publishLocal`
 
-Then run it with (replace localhost & secret) :
+Then create container with (replace localhost & secret) :
 
 ` docker run --name wiki --env APP_VARS='-Ddb.postgresql.url="jdbc:postgresql://172.17.0.2:5432/wiki" -Dplay.crypto.secret="QCY?tAnfk?aZ?iwrNwnxIlR6CTf:G3gf:90Latabg@5241AB/R5W:1uDFN];Ik@n"' wiki:1.0-SNAPSHOT`
 

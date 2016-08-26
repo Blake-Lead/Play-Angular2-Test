@@ -1,4 +1,5 @@
 <div class="container-fluid">
+<div class="col-md-10">
     <div class="well">
         <h4>
             <a href="javascript:void(0)" (click)="addModal.open()">
@@ -30,6 +31,8 @@
                 <td>{{address?.description}}</td>
                 <td>{{getGroupName(address?.groupId)}}</td>
                 <td>
+                    <button type="button" class="btn btn-xs"><a href="{{address?.ip}}:{{address?.port}}" target="blank">
+                    Aller à </a></button>
                     <button type="button" class="btn btn-xs btn-danger"
                     (click)="deleteModal.open();idToDelete=address.id">
                     Supprimer</button>
@@ -37,6 +40,7 @@
             </tr>
         </tbody>
     </table>
+</div>
 </div>
 </div>
 

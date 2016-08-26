@@ -9,10 +9,6 @@ import {RegistryComponent}       from './components/registry.component';
 
 const routes: Routes = [
 {
-    path: '',
-    component: AppComponent
-},
-{
     path: 'wiki/browse',
     component: WikiBrowseComponent
 },

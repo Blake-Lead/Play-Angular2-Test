@@ -1,4 +1,4 @@
-# client side of AFPA project
+# CLIENT SIDE OF *MY TOOLBOX*
 
 You must have node (>=4) and npm (>=3) installed to run the application.
 

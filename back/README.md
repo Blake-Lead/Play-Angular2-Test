@@ -1,4 +1,4 @@
-# ipbase
+# SERVER SIDE OF *MY TOOLBOX*
 
 ## Prerequisites
 You must have *docker* & *docker-compose* installed to create the database.

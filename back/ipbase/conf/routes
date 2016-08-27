@@ -1,16 +1,16 @@
 # Routes
 
-GET     /                               controllers.ApplicationController.index
+GET     /api/ipbase                           controllers.ApplicationController.index
 
-GET     /addresses                      controllers.AddressController.findAll
-GET     /addresses/:id                  controllers.AddressController.find(id: Long)
-GET     /addresses/bygroup/:id          controllers.AddressController.findByGroup(id: Long)
-POST    /addresses                      controllers.AddressController.create
-PUT     /addresses                      controllers.AddressController.update
-DELETE  /addresses/:id                  controllers.AddressController.delete(id: Long)
+GET     /api/ipbase/addresses                 controllers.AddressController.findAll
+GET     /api/ipbase/addresses/:id             controllers.AddressController.find(id: Long)
+GET     /api/ipbase/addresses/bygroup/:id     controllers.AddressController.findByGroup(id: Long)
+POST    /api/ipbase/addresses                 controllers.AddressController.create
+PUT     /api/ipbase/addresses                 controllers.AddressController.update
+DELETE  /api/ipbase/addresses/:id             controllers.AddressController.delete(id: Long)
 
-GET     /groups                         controllers.GroupController.findAll
-GET     /groups/:id                     controllers.GroupController.find(id: Long)
-POST    /groups                         controllers.GroupController.create
-PUT     /groups                         controllers.GroupController.update
-DELETE  /groups/:id                     controllers.GroupController.delete(id: Long)
+GET     /api/ipbase/groups                    controllers.GroupController.findAll
+GET     /api/ipbase/groups/:id                controllers.GroupController.find(id: Long)
+POST    /api/ipbase/groups                    controllers.GroupController.create
+PUT     /api/ipbase/groups                    controllers.GroupController.update
+DELETE  /api/ipbase/groups/:id                controllers.GroupController.delete(id: Long)

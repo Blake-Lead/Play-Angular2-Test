@@ -10,8 +10,8 @@ export class WikiService {
 
     constructor(private http: Http) {}
 
-    private articlesUrl = 'http://localhost:9000/articles';
-    private categoriesUrl = 'http://localhost:9000/categories';
+    private articlesUrl = 'http://'+ window.location.hostname +'/api/wiki/articles';
+    private categoriesUrl = 'http://'+ window.location.hostname +'/api/wiki/categories';
 
     getArticles(): Observable<Article[]> {
         return this.http.get(this.articlesUrl)

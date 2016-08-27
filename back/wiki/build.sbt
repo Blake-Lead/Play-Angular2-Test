@@ -21,6 +21,5 @@ dockerCommands := Seq(
   Cmd("MAINTAINER", "Adel Abdelhak <adel.abdelhak@leansys.fr>"),
   Cmd("COPY", "opt /opt"),
   Cmd("RUN", "chmod +x /opt/env-build.sh"),
-  Cmd("EXPOSE", "9010"),
   Cmd("CMD", s"/opt/env-build.sh ${packageName.value}")
 )

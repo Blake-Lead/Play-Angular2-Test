@@ -19,10 +19,10 @@ import models.Group;
 public class GroupDao {
 
     private Config conf = ConfigFactory.load();
-    private String DB_DRIVER = conf.getString("db.postgresql.driver");
-    private String DB_CONNECTION = conf.getString("db.postgresql.url");
-    private String DB_USER = conf.getString("db.postgresql.username");
-    private String DB_PASSWORD = conf.getString("db.postgresql.password");
+    private String DB_DRIVER = conf.getString("db.default.driver");
+    private String DB_CONNECTION = conf.getString("db.default.url");
+    private String DB_USER = conf.getString("db.default.username");
+    private String DB_PASSWORD = conf.getString("db.default.password");
 
     public Collection<Group> findAll() throws SQLException {
         Connection dbConnection = null;

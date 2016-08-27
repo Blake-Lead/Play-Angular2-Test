@@ -5,14 +5,14 @@
 **my-toolbox** is a project developed for my certification at AFPA.
 It consists of 4 Docker containers :
 - PostgreSQL database
-- 2 Play 2 APIs
-- UI with Nginx
+- 2 Play APIs
+- UI served by Nginx
 
 ## Prerequisites
 
-You must have **docker** & **docker-compose** installed to create the database.
-You must have **sbt** to build the APIs.
-You must have **npm** (>= 3) to build the UI.
+All developement is done in a Linux Ubuntu environment. The following documentation assumes you also are on a Linux machine in order to build & run the project.
+
+You must have **docker** & **docker-compose** installed to create the database, **sbt** to build the APIs, **node** (>= 4) & **npm** (>= 3) to build the UI.
 
 ## Database
 
@@ -37,8 +37,6 @@ then :
 > TODO : Currently, the last command does not work when specifying -Ddb.postgresql.url. The Docker container crashes with error `java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept JDBC URL "jdbc:postgresql://172.17.0.2:5432/ipbase"`.
 
 ## UI
-
-You must have **node** (>=4) and **npm** (>=3) installed to run the application.
 
 Install dependencies :
 

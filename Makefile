@@ -1,12 +1,12 @@
 default: runAll
 
-runAll: prepare build run
+runAll: build images run
 
 run:
 	docker-compose up -d
 
-build:
+images:
 	docker-compose -f docker-compose.build.yml build
 
-prepare:
+build:
 	./build.sh

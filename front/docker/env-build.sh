@@ -23,4 +23,4 @@ done
 
 IFS=$OLDIFS
 
-sed -i "s/WIKI_URL/$wikiurl/" /etc/nginx/nginx.conf &&sed -i "s/IPBASE_URL/$ipbaseurl/" /etc/nginx/nginx.conf && sed -i "s/REGISTRY_URL/$registryurl/" /etc/nginx/nginx.conf && nginx -g "daemon off;"
+sed -i "s/WIKI_URL/$wikiurl/" /etc/nginx/nginx.conf && sed -i "s/IPBASE_URL/$ipbaseurl/" /etc/nginx/nginx.conf && sed -i "s/REGISTRY_URL/$registryurl/" /etc/nginx/nginx.conf && nginx -g "daemon off;"

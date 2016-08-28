@@ -17,7 +17,7 @@ mappings in Docker += file("env-build.sh") -> "/opt/env-build.sh"
 packageName in Docker := name.value
 version in Docker := version.value
 dockerCommands := Seq(
-  Cmd("FROM", "training/java8"),
+  Cmd("FROM", "openjdk:8"),
   Cmd("MAINTAINER", "Adel Abdelhak <adel.abdelhak@leansys.fr>"),
   Cmd("COPY", "opt /opt"),
   Cmd("RUN", "chmod +x /opt/env-build.sh"),

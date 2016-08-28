@@ -6,6 +6,7 @@ import {HttpModule}             from '@angular/http';
 import {routing}                from './app.routes';
 
 import {AppComponent}           from './components/app.component';
+import {HomeComponent}          from './components/home.component';
 import {WikiBrowseComponent}    from './components/wiki-browse.component';
 import {WikiViewComponent}      from './components/wiki-view.component';
 import {WikiEditComponent}      from './components/wiki-edit.component';
@@ -26,6 +27,7 @@ import { MODAL_DIRECTIVES }     from 'ng2-bs3-modal/ng2-bs3-modal';
     ],
 
     declarations: [
+    HomeComponent,
     WikiBrowseComponent,
     WikiViewComponent,
     WikiEditComponent,

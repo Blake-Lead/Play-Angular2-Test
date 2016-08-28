@@ -1,0 +1,353 @@
+/*****************************FONTS*******************************************/
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+
+
+
+/*****************************BODY***************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+
+body {
+  	font-family: 'Quicksand', sans-serif;*
+	box-sizing: border-box;
+	min-height: 99%;
+	max-height: 99%;
+	min-width: 99%;
+	max-width: 99%;
+	overflow-x: hidden;
+}
+
+app{
+	font-size: 25px;
+}
+
+/*****************************LISTES STYLE***************************************/
+li {
+
+	list-style-type : none;
+	color: blue ;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/**********************************TOP NAV***************************************/
+
+.topnav {
+	min-height: 50 px;
+	max-height: 70 px;
+	background-color: #1d1c1c;
+	color: white;
+}
+
+.header {
+	padding-top: 5px;
+	padding-left: 5px;
+	background-color: #1d1c1c;
+	color: white;
+	font-size: 25px;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+/**********************************SIDEBAR***************************************/
+
+.sidebar {
+	min-height: 95% !important;
+	max-height: 97% !important;
+	background-color: #1d1c1c;
+	padding: 0;
+	margin: 0;
+}
+
+.list-group{
+	border : none!important;
+	border-radius: 0!important;
+
+	font-size: 16px;
+}
+
+a.submenu {
+	color: white!important;
+}
+
+a.submenu:hover{
+	text-decoration :none;
+}
+
+a.submenu:visited{
+	text-decoration :none;
+}
+
+a.list-group-item {
+	background-color: #1d1c1c;
+	color: white!important;
+}
+
+a.list-group-item:focus {
+	background-color: black;
+	color: white!important;
+}
+
+a.list-group-item:hover {
+	background-color: black;
+	color: white!important;
+}
+
+.list-group-item {
+	border : none!important;
+	background-color: #1d1c1c;
+	color: white!important;
+	margin-top: 15px;
+	font-size: 17px;
+}
+
+.list-group-item:first-child{
+	border-radius: 0;
+}
+
+.list-group-item:last-child{
+	border-radius: 0;
+}
+
+/*****************************CONTENT***************************************/
+
+.content{
+	margin-top :20px;
+	max-height: 90%;
+ 
+}
+
+.btn-group {
+	margin-top: 10px;
+}
+
+/*****************************HOME***************************************/
+
+.prez {
+	font-size: 18px;
+	background-color: #1d1c1c!important;;
+	color: white!important;
+	font-weight: bold;
+}
+
+.twitterA  {
+	background-color: #55a955!important;
+	color: white!important;
+	font-size: 18px;
+}
+
+.twitterL {
+	background-color: #558c7a!important;
+	color: white!important;
+	font-size: 18px;
+}
+
+.linkedin {
+	background-color: #bd4949!important;
+	color: white!important;
+	font-size: 18px;
+}
+
+.site {
+	background-color: #FC9540!important;
+	color: white!important;
+	font-size: 18px;
+}
+
+i.fa {
+	color: white;
+}
+
+.btn-primary {
+	background-color: #1d1c1c!important;
+	color: white!important;
+	border-color: #1d1c1c!important;
+}
+
+.bienvenue {
+	font-size: 18px!important;
+}
+
+
+/*****************************WIKI VIEW***************************************/
+
+
+.article {
+	margin-top: 20px;
+}
+
+.fa-plus-circle {
+	color:#55a955!important; 
+}
+
+.cat {
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*****************************WIKI EDIT***************************************/
+
+
+.fa-question-circle {
+	color: #FC9540!important;
+}
+
+.markup {
+	font-size: 14px;
+
+}
+
+.aper {
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+
+}
+
+.markupH {
+
+	background-color: #1d1c1c!important;
+	color: white!important;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+.titreH {
+	background-color: #1d1c1c!important;
+	color: white!important;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+.auteurH {
+	background-color: #1d1c1c!important;
+	color: white!important;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.btn-success {
+	background-color: #55a955!important;
+	color: white!important;
+	border-color: #55a955!important;
+	font-size: 16px!important;
+}
+
+.btn-warning {
+	background-color: #558c7a!important;
+	color: white!important;
+	border-color: #558c7a!important;
+	font-size: 16px!important;
+}
+
+.btn-danger {
+	background-color: #bd4949!important;
+	color: white!important;
+	border-color: #bd4949!important;
+	font-size: 16px!important;
+
+}
+
+.fa-plus-circle{
+	font-family: 'Poppins', sans-serif;
+}
+
+/*****************************WIKI BROWSE***************************************/
+
+.cate {
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+}
+
+.addCat {
+	font-family: 'Quicksand', sans-serif;
+	color: #1d1c1c;
+}
+
+.badge {
+	background-color: #bd4949!important;
+	color: white!important;
+}
+
+.listeI:hover{
+	background-color: #55a955!important;
+	color: white!important;
+}
+
+.artTitre {
+	color: #55a955!important;
+	font-weight: bold;
+	font-family: 'Poppins', sans-serif;
+	font-size: 22px;
+}
+
+.thumbnail {
+	border-color: #558c7a!important;
+}
+
+.titreCat {
+	font-weight: bold;
+}
+
+
+/*****************************IP BASE***************************************/
+
+.addAd {
+	color: #1d1c1c!important;
+}
+
+a.addAd:visited {
+	text-decoration: none;
+}
+
+a.addAd:active {
+	text-decoration: none;
+}
+
+.fa-check {
+	color: #55a955!important;
+	text-indent: 7px;
+}
+
+
+.table-hover>tbody>tr:hover {
+	background-color: #558c7a!important;
+	color: white!important;
+}
+
+thead {
+	background-color:  #1d1c1c!important;
+	color: white!important;
+	font-weight: bold;
+}
+
+
+/*****************************MODAL***************************************/
+

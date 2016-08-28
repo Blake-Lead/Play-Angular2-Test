@@ -1,6 +1,7 @@
 
 import {Routes, RouterModule}    from '@angular/router';
 import {AppComponent}            from './components/app.component';
+import {HomeComponent}           from './components/home.component';
 import {WikiBrowseComponent}     from './components/wiki-browse.component';
 import {WikiEditComponent}       from './components/wiki-edit.component';
 import {WikiViewComponent}       from './components/wiki-view.component';
@@ -8,6 +9,10 @@ import {IpBaseComponent}         from './components/ipbase.component';
 import {RegistryComponent}       from './components/registry.component';
 
 const routes: Routes = [
+{
+    path: 'home',
+    component : HomeComponent
+},
 {
     path: 'wiki/browse',
     component: WikiBrowseComponent

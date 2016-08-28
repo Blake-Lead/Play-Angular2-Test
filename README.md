@@ -23,19 +23,23 @@ To deploy and run all project:
 make runAll
 ```
 
-To build front & create Dockerfiles for APIs:
+This command runs all the commands below so it is not necessary to execute them unless you know what you do.
+
+***
+
+It is also possible to build front & create Dockerfiles for APIs:
 
 ```
 make build
 ```
 
-To create Docker images:
+create Docker images:
 
 ```
 make images
 ```
 
-To run containers:
+and run containers:
 
 ```
 make run
@@ -54,3 +58,6 @@ This applies to running containers:
 ```
 docker-compose up -d <db, wiki, ipbase or ui>
 ```
+
+
+Of course, you can build & run each application independently, but it could mean changing some parts of the code. If you have questions about that, feel free to ask.

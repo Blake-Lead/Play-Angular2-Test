@@ -8,7 +8,9 @@ import {Category} from '../models/category';
 
 @Component({
     selector: 'wiki-edit',
-    templateUrl: 'app/views/wiki-edit.html'
+    templateUrl: 'app/views/wiki-edit.html',
+    styleUrls: ['app/styles/style.css']
+
 })
 export class WikiEditComponent implements OnInit {
 

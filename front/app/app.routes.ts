@@ -10,7 +10,6 @@ import {RegistryComponent}       from './components/registry.component';
 
 const routes: Routes = [
 {
-
     path: 'home',
     component : HomeComponent
 },
@@ -36,7 +35,7 @@ const routes: Routes = [
 },
 {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'home',
     pathMatch: 'full'
 }
 ];

@@ -1,6 +1,6 @@
-default: runAll
+default: mytoolbox
 
-runAll: build images run
+mytoolbox: build images run
 
 run:
 	docker-compose up -d

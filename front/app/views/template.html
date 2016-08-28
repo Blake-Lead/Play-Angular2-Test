@@ -1,10 +1,10 @@
-    <div class="row topnav">
-        <div class = "col-md-12">
-            <div class="panel header">
-                The ToolBox
-            </div>
-        </div> 
+<div class="row topnav">
+    <div class = "col-md-12">
+        <div class="panel header">
+            The ToolBox
+        </div>
     </div>
+</div>
 
 
 <nav class="sidebar col-md-1">
@@ -15,8 +15,8 @@
             <span><i class="fa fa-plus"></i>WIKI</span>
             <div id="id1" class="panel-collapse collapse">
                 <ul class="list-group">
-                    <li><a [routerLink]="['wiki/edit/0']" href><span>Nouvel Article</span></a></li>
-                    <li><a [routerLink]="['wiki/browse']" href><span>Voir Articles</span></a></li>
+                    <li><a [routerLink]="['wiki/edit/0']" href><span>Ecrire</span></a></li>
+                    <li><a [routerLink]="['wiki/browse']" href><span>Consulter</span></a></li>
                 </ul>
             </div>
         </a>
@@ -26,4 +26,7 @@
 
     </ul>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="content col-md-11">
+    <router-outlet></router-outlet>
+</div>

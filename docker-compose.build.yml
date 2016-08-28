@@ -3,16 +3,16 @@ version: "2"
 services:
   db:
     build: ./database
-    image: afpa/postgres
+    image: mytoolbox/postgres
 
   wiki:
     build: ./back/wiki/target/docker/stage
-    image: afpa/wiki
+    image: mytoolbox/wiki
 
   ipbase:
     build: ./back/ipbase/target/docker/stage
-    image: afpa/ipbase
+    image: mytoolbox/ipbase
 
   ui:
     build: ./front
-    image: afpa/ui
+    image: mytoolbox/ui

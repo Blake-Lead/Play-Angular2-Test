@@ -7,6 +7,5 @@ import {HomeComponent}        from './home.component';
     selector: 'app',
     templateUrl: 'app/views/template.html',
     styleUrls: ['app/styles/style.css']
-
 })
 export class AppComponent {}

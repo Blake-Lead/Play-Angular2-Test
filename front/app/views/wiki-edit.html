@@ -1,103 +1,44 @@
 <div class="container-fluid">
-  <div class="col-md-12">
-    <!-- Category choice -->
-    <div class="col-md-6">
-      <select id="select" name="select" [(ngModel)]="article.categoryId">
-        <option *ngFor="let category of categories" [value]="category.id">{{category?.tag}}</option>
-      </select>
-      <br>
-      <br>
-      <!-- Title & autor fields -->
-      <div class="input-group">
-        <span class="input-group-addon" id="title">Titre</span>
-        <input id="title" type="text" class="form-control" placeholder="Titre" aria-describedby="title" [(ngModel)]="article.title">
-      </div>
-      <br>
-      <div class="input-group">
-        <span class="input-group-addon" id="author">Auteur</span>
-        <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
-      </div>
-      <br>
-      <br>
-      <!-- Save article -->
 
-      <br>
-      <br>
-      <!-- Editor -->
-      <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success" (click)="saveArticle()">Enregistrer</button>
-        <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
-      </div>
+  <div class="col-md-6">
+    <!-- Choose category -->
     <label for="select">Catégorie</label>
     <select id="select" name="select" [(ngModel)]="article.categoryId">
       <option *ngFor="let category of categories" [value]="category.id">{{category?.tag}}</option>
     </select>
-    <br>
-    <br>
-    <!-- Title & author fields -->
+    <br><br>
+    <!-- Title & autor fields -->
     <div class="input-group">
-      <label for="title">Titre</label>
-      <input id="title" type="text" class="form-control" aria-describedby="title" [(ngModel)]="article.title">
+      <span class="input-group-addon" id="title">Titre</span>
+      <input id="title" type="text" class="form-control" placeholder="Titre" aria-describedby="title" [(ngModel)]="article.title">
     </div>
     <br>
     <div class="input-group">
-      <label for="author">Auteur</label>
-      <input id="author" type="text" class="form-control" aria-describedby="author" [(ngModel)]="article.author">
+      <span class="input-group-addon" id="author">Auteur</span>
+      <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
     </div>
     <br>
-    <br>
+    <!-- Editor -->
+    <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
     <!-- Save article -->
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-success" (click)="saveArticle()">Enregistrer</button>
       <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
     </div>
-    <br>
-    <br>
-    <!-- Editor -->
-    <textarea id="rawtext" rows="20" cols="50" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
-
-
-      <br>
-      <br>
-      <!-- Title & autor fields -->
-      <div class="input-group">
-        <span class="input-group-addon titreH" id="title1">Titre</span>
-        <input id="title1" type="text" class="form-control" placeholder="Titre" aria-describedby="title" [(ngModel)]="article.title">
-      </div>
-      <br>
-      <div class="input-group">
-        <span class="input-group-addon auteurH" id="author">Auteur</span>
-        <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
-      </div>
-      
-      <br>
-      <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success" (click)="saveArticle()">Enregistrer</button>
-        <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
-      </div>
-  </div>
-
-
-      <br>
-      <br>
-
-
-  <div class="col-md-6">
-      <div class="panel panel-default markup">
-        <div class="panel-heading markupH"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>&nbsp;Aide Markup</div>
-        <div class="panel-body">
-          **Bold Text**
-
-          //Italic Text//
-        </div>
-      </div>
-
-      <div class="panel aper"> Aperçu de la saisie</div>
-      <span id="mdtext" [innerHTML]="articleMd"></span>
   </div>
 
   <!-- Markdown preview -->
+  <div class="col-md-6">
+    <div class="panel panel-default markup">
+      <div class="panel-heading markupH"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>&nbsp;Aide Markup</div>
+      <div class="panel-body">
+        **Bold Text**
+
+        //Italic Text//
+      </div>
+    </div>
+    <div class="panel aper"> Aperçu de la saisie</div>
+    <span id="mdtext" [innerHTML]="articleMd"></span>
+  </div>
 
 </div>

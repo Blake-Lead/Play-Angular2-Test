@@ -2,7 +2,7 @@ version: "2"
 
 services:
   db:
-    image: afpa/postgres
+    image: mytoolbox/postgres
     environment:
       - POSTGRES_USER=afpauser
       - POSTGRES_PASSWORD=password
@@ -10,7 +10,7 @@ services:
       - 5432
 
   wiki:
-    image: afpa/wiki
+    image: mytoolbox/wiki
     links:
       - db
     environment:
@@ -19,7 +19,7 @@ services:
       - 9010:9000
 
   ipbase:
-    image: afpa/ipbase
+    image: mytoolbox/ipbase
     links:
       - db
     environment:
@@ -28,7 +28,7 @@ services:
       - 9011:9000
 
   ui:
-    image: afpa/ui
+    image: mytoolbox/ui
     links:
       - wiki
       - ipbase

@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  db:
+    build: ./database
+    image: afpa/postgres
+
+  wiki:
+    build: ./back/wiki/target/docker/stage
+    image: afpa/wiki
+
+  ipbase:
+    build: ./back/ipbase/target/docker/stage
+    image: afpa/ipbase
+
+  ui:
+    build: ./front
+    image: afpa/ui

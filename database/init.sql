@@ -1,7 +1,3 @@
--- create user & give him all powers
-CREATE USER afpauser WITH CREATEDB PASSWORD 'password';
-CREATE DATABASE afpauser;
-
 ----------
 -- WIKI --
 ----------

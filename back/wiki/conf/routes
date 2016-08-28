@@ -1,16 +1,16 @@
 # Routes
 
-GET     /                               controllers.ApplicationController.index
+GET     /api/wiki                           controllers.ApplicationController.index
 
-GET     /articles                       controllers.ArticleController.findAll
-GET     /articles/:id                   controllers.ArticleController.find(id: Long)
-GET     /articles/bycategory/:id        controllers.ArticleController.findByCategory(id: Long)
-POST    /articles                       controllers.ArticleController.create
-PUT     /articles                       controllers.ArticleController.update
-DELETE  /articles/:id                   controllers.ArticleController.delete(id: Long)
+GET     /api/wiki/articles                  controllers.ArticleController.findAll
+GET     /api/wiki/articles/:id              controllers.ArticleController.find(id: Long)
+GET     /api/wiki/articles/bycategory/:id   controllers.ArticleController.findByCategory(id: Long)
+POST    /api/wiki/articles                  controllers.ArticleController.create
+PUT     /api/wiki/articles                  controllers.ArticleController.update
+DELETE  /api/wiki/articles/:id              controllers.ArticleController.delete(id: Long)
 
-GET     /categories                     controllers.CategoryController.findAll
-GET     /categories/:id                 controllers.CategoryController.find(id: Long)
-POST    /categories                     controllers.CategoryController.create
-PUT     /categories                     controllers.CategoryController.update
-DELETE  /categories/:id                 controllers.CategoryController.delete(id: Long)
+GET     /api/wiki/categories                controllers.CategoryController.findAll
+GET     /api/wiki/categories/:id            controllers.CategoryController.find(id: Long)
+POST    /api/wiki/categories                controllers.CategoryController.create
+PUT     /api/wiki/categories                controllers.CategoryController.update
+DELETE  /api/wiki/categories/:id            controllers.CategoryController.delete(id: Long)

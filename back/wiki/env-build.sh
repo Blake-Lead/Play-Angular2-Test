@@ -1,22 +1,23 @@
 #!/bin/bash
 
-# extract app arguments from container environment variables
-
-appprefix="APP_VARS="
+postgrePrefix="JDBC_DATABASE_URL"
+cryptoPrefix="PLAY_CRYPTO_SECRET"
 
 OLDIFS=$IFS
 
 IFS='
 '
-arguments=""
+postgre=""
+crypto=""
 for item in `env`; do
-  if [[ $item == $appprefix* ]]; then
-    part=`echo $item | sed "s/^$appprefix//"`
-    arguments+="$part"
+  if [[ $item == $postgrePrefix* ]]; then
+    postgre=`echo $item | sed "s|^$postgrePrefix|-Ddb.default.url|"`
+  elif [[ $item == $cryptoPrefix* ]]; then
+    crypto=`echo $item | sed "s|^$cryptoPrefix|-Dplay.crypto.secret|"`
   fi
 done
 
 IFS=$OLDIFS
 
-# launch app with app and jvm arguments
-/opt/docker/bin/$1 $arguments
+# launch app with app arguments
+/opt/docker/bin/$1 $postgre $crypto

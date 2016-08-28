@@ -1,3 +1,4 @@
+
 <div class="content">
 
     <div class="col-md-12">
@@ -41,6 +42,7 @@
 
     <div class="col-md-12 article">
 
+
       <div class="col-md-6" *ngFor="let article of articles;let i=index">
         <div *ngIf="i<4">
           <div class="thumbnail">
@@ -54,7 +56,6 @@
           </div>
           </div>
       </div>
-
   </div>
 
   <modal [animation]="true" [keyboard]="true" (onClose)="onCloseAddCategoryModal($event)" #addCategoryModal>

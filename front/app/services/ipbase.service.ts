@@ -10,8 +10,8 @@ export class IpBaseService {
 
     constructor(private http: Http) {}
 
-    private addressesUrl = 'http://localhost:9001/addresses';
-    private groupsUrl = 'http://localhost:9001/groups';
+    private addressesUrl = 'http://'+ window.location.hostname +'/api/ipbase/addresses';
+    private groupsUrl = 'http://'+ window.location.hostname +'/api/ipbase/groups';
 
     getAddresses(): Observable<Address[]> {
         return this.http.get(this.addressesUrl)

@@ -7,7 +7,6 @@ COPY ./app/styles /usr/share/nginx/html/app/styles
 COPY systemjs.config.js /usr/share/nginx/html
 COPY ./node_modules /usr/share/nginx/html/node_modules
 COPY index.html /usr/share/nginx/html
-COPY style.css /usr/share/nginx/html
 
 # Copy custom configuration & start script
 COPY docker/nginx.conf /etc/nginx/nginx.conf

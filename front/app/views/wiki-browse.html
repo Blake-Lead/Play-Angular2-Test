@@ -1,74 +1,76 @@
 <div class="content">
 
-    <div class="col-md-12">
-      
-        <!-- Categories accordion -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-3 cate">
-              Catégories :
-            </div>
-            <div class="col-md-2 col-md-offset-7">
-              <a class="addCat" href="javascript:void(0)" (click)="addCategoryModal.open()">
-               <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter
-              </a>
-            </div>
-          </div>
+  <div class="col-md-12">
+
+    <!-- Categories accordion -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3 cate">
+          Catégories :
         </div>
-        <div class="list-group">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default" *ngFor="let category of categories">
-            <div class="panel-heading titreCat" role="tab">
-              <h4 class="panel-title">
-                <a role="button" class="titreCat" data-toggle="collapse" data-parent="#accordion"
-                href="#collapse_{{category.id}}" aria-expanded="true" attr.aria-controls="collapse_{{category.id}}">
-                {{category.tag}}</a>
-              </h4>
-            </div>
-            <div id="collapse_{{category.id}}" class="panel-collapse collapse" role="tabpanel">
-              <div class="panel-body">
-                <button type="button" class="list-group-item listeI" *ngFor="let article of getArticlesByCategory(category.id)"
-                (click)="gotoArticle(article.id)"><span class="badge">{{article.author}}</span>{{article.title}}</button>
-              </div>
-            </div>
+        <div class="col-md-2 col-md-offset-7">
+          <a class="addCat" href="javascript:void(0)" (click)="addCategoryModal.open()">
+           <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter
+         </a>
+       </div>
+     </div>
+   </div>
+   <div class="list-group">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default" *ngFor="let category of categories">
+        <div class="panel-heading titreCat" role="tab">
+          <h4 class="panel-title">
+            <a role="button" class="titreCat" data-toggle="collapse" data-parent="#accordion"
+            href="#collapse_{{category.id}}" aria-expanded="true" attr.aria-controls="collapse_{{category.id}}">
+            {{category.tag | uppercase}} : {{category.description | lowercase}}</a>
+          </h4>
+        </div>
+        <div id="collapse_{{category.id}}" class="panel-collapse collapse" role="tabpanel">
+          <div class="panel-body">
+            <button type="button" class="list-group-item listeI" *ngFor="let article of getArticlesByCategory(category.id)"
+            (click)="gotoArticle(article.id)"><span class="badge">{{article.author}}</span>{{article.title}}</button>
           </div>
         </div>
       </div>
-      <!-- Create article button -->
-      <button type="button" class="btn btn-primary" (click)="createArticle()">Créer un article</button>
     </div>
-    <!-- Recent articles -->
-
-    <div class="col-md-12 article">
-
-
-      <div class="col-md-6" *ngFor="let article of articles;let i=index">
-        <div *ngIf="i<4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3 class="artTitre">{{article.title}}</h3>
-              <p [innerHTML]="parseMarkdown(article.body.substring(0,100)+' . . .')"></p>
-              <p><a class="btn btn-primary" role="button" (click)="editArticle(article.id)">Editer</a>
-                <a class="btn btn-default" role="button" (click)="deleteArticle(article.id)">Supprimer</a></p>
-              </div>
-            </div>
-          </div>
-          </div>
-      </div>
   </div>
+  <!-- Create article button -->
+  <button type="button" class="btn btn-primary" (click)="createArticle()">Créer un article</button>
+</div>
+<!-- Recent articles -->
 
-  <modal [animation]="true" [keyboard]="true" (onClose)="onCloseAddCategoryModal($event)" #addCategoryModal>
-    <modal-header [show-close]="true">
-      <h4 class="modal-title">Ajouter une catégorie</h4>
-    </modal-header>
-    <modal-body>
-      <div class="form-group">
-        <label for="tag">Nom</label>
-        <input autofocus type="text" class="form-control" id="tag" [(ngModel)]="category.tag">
-        <label for="description">Description</label>
-        <input type="textarea" class="form-control" id="description" [(ngModel)]="category.description">
+<div class="col-md-12 article">
+
+
+  <div class="col-md-6" *ngFor="let article of articles;let i=index">
+    <div *ngIf="i<4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3 class="artTitre">{{article.title}}</h3>
+          <p [innerHTML]="parseMarkdown(article.body.substring(0,100)+' . . .')"></p>
+          <p><a class="btn btn-primary" role="button" (click)="editArticle(article.id)">Editer</a>
+            <a class="btn btn-default" role="button" (click)="deleteArticle(article.id)">Supprimer</a></p>
+          </div>
+        </div>
       </div>
-    </modal-body>
-    <modal-footer [show-default-buttons]="true" [close-button-label]="Ajouter" [dismiss-button-label]="Annuler">
-    </modal-footer>
-  </modal>
+    </div>
+  </div>
+</div>
+
+<modal [animation]="true" [keyboard]="true" (onClose)="onCloseAddCategoryModal($event)" #addCategoryModal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">Ajouter une catégorie</h4>
+  </modal-header>
+  <modal-body>
+    <div class="form-group">
+      <label for="tag">Nom</label>
+      <input autofocus type="text" class="form-control" id="tag" [(ngModel)]="category.tag">
+      <label for="description">Description</label>
+      <input type="textarea" class="form-control" id="description" [(ngModel)]="category.description">
+    </div>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="addCategoryModal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-primary" (click)="addCategoryModal.close()">Ajouter</button>
+  </modal-footer>
+</modal>

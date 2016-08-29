@@ -5,50 +5,50 @@
 
     <div class="col-md-12">
 
-    <div class="well">
-        <h4>
-            <a href="javascript:void(0)" (click)="addModal.open()" class="addAd">
-                <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter une adresse
-            </a>
-            <br>
-             <a href="javascript:void(0)" (click)="addGroupModal.open()" class="addAd">
-                <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter un groupe d'adresses
-            </a>
-        </h4>
-    </div>
-    <div class="panel panel-default">
+        <div class="well">
+            <h4>
+                <a href="javascript:void(0)" (click)="addModal.open()" class="addAd">
+                    <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter une adresse
+                </a>
+                <br>
+                <a href="javascript:void(0)" (click)="addGroupModal.open()" class="addAd">
+                    <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>&nbsp;Ajouter un groupe d'adresses
+                </a>
+            </h4>
+        </div>
+        <div class="panel panel-default">
 
-        <table class="table table-hover">
-         <thead>
-            <tr>
-                <th style="width: 15%">IP</th>
-                <th style="width: 10%">Port</th>
-                <th style="width: 45%">Description</th>
-                <th style="width: 10%">Groupe</th>
-                <th style="width: 10%">Aller à</th>
-                <th style="width: 15%">Supprimer</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let address of addresses">
-                <td >{{address?.ip}}</td>
-                <td class="td-hover">{{address?.port}}</td>
-                <td>{{address?.description}}</td>
-                <td>{{getGroupName(address?.groupId)}}</td>
-                <td>
-                    <a href="{{address?.ip}}:{{address?.port}}" target="blank"><i class="fa fa-check" aria-hidden="true"></i>
-                    </a>
-                </td>
-                <td class="trash">
-                    <button type="button" class="btn btn-xs btn-danger"
-                    (click)="deleteModal.open();idToDelete=address.id">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <table class="table table-hover">
+             <thead>
+                <tr>
+                    <th style="width: 15%">IP</th>
+                    <th style="width: 10%">Port</th>
+                    <th style="width: 45%">Description</th>
+                    <th style="width: 10%">Groupe</th>
+                    <th style="width: 10%">Aller à</th>
+                    <th style="width: 15%">Supprimer</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let address of addresses">
+                    <td >{{address?.ip}}</td>
+                    <td class="td-hover">{{address?.port}}</td>
+                    <td>{{address?.description}}</td>
+                    <td>{{getGroupName(address?.groupId)}}</td>
+                    <td>
+                        <a href="{{address?.ip}}:{{address?.port}}" target="blank"><i class="fa fa-check" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="trash">
+                        <button type="button" class="btn btn-xs btn-danger"
+                        (click)="deleteModal.open();idToDelete=address.id">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <modal [animation]="true" [keyboard]="true" (onClose)="onCloseAddModal($event)" #addModal>
@@ -69,8 +69,10 @@
           <input type="textarea" class="form-control" id="description" [(ngModel)]="address.description">
       </div>
   </modal-body>
-  <modal-footer [show-default-buttons]="true" [close-button-label]="Ajouter" [dismiss-button-label]="Annuler">
-  </modal-footer>
+  <modal-footer>
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="addModal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-primary" (click)="addModal.close()">Ajouter</button>
+</modal-footer>
 </modal>
 
 <modal [animation]="true" [keyboard]="true" (onClose)="onCloseDeleteModal($event)" #deleteModal>
@@ -80,7 +82,9 @@
     <modal-body>
         <h5>Etes-vous sûr de vouloir supprimer cette adresse ({{idToDelete}})?</h5>
     </modal-body>
-    <modal-footer [show-default-buttons]="true" [close-button-label]="Confirmer" [dismiss-button-label]="Annuler">
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="deleteModal.dismiss()">Annuler</button>
+        <button type="button" class="btn btn-primary" (click)="deleteModal.close()">Confirmer</button>
     </modal-footer>
 </modal>
 
@@ -96,6 +100,8 @@
             <input type="textarea" class="form-control" id="groupdescription" [(ngModel)]="group.description">
         </div>
     </modal-body>
-    <modal-footer [show-default-buttons]="true" [close-button-label]="Ajouter" [dismiss-button-label]="Annuler">
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="addGroupModal.dismiss()">Annuler</button>
+        <button type="button" class="btn btn-primary" (click)="addGroupModal.close()">Ajouter</button>
     </modal-footer>
 </modal>

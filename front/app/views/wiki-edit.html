@@ -18,7 +18,8 @@
       <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
     </div>
     <br>
-    <a href class="question-circle"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i></a>
+    <a href="javascript:void(0)" class="question-circle" (click)="modal.open()"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i></a>
+    <br>
     <br>
     <!-- Editor -->
     <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
@@ -31,9 +32,25 @@
 
   <!-- Markdown preview -->
   <div class="col-md-6">
-     
+
     <div class="panel aper"> Aperçu de la saisie</div>
     <span id="mdtext" [innerHTML]="articleMd"></span>
   </div>
 
 </div>
+
+<modal [animation]="true" [keyboard]="true" (onClose)="onClose($event)" #modal>
+    <modal-header [show-close]="true">
+        <h2 class="modal-title">Aide</h2>
+    </modal-header>
+    <modal-body>
+        <h3># : <span>Titre</span></h3>
+        <h3>## : <span>Sous-Titre</span></h3>
+        <h3>`` : <span>Code</span></h3>
+        <h3>> : <span>Note</span></h3>
+        <h3>*mot* : <span>italique</span></h3>
+        <h3>**mot** : <span>gras</span></h3>
+        <h3>***mot*** : <span>gras italique</span></h3>
+        <h3>*** : <span>séparateur</span></h3>
+    </modal-body>
+</modal>

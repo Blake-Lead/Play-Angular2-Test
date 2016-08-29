@@ -9,8 +9,7 @@ import {Group}                               from '../models/group';
 
 @Component({
     selector: 'ipbase',
-    templateUrl: 'app/views/ipbase.html',
-    styleUrls: ['app/styles/style.css']
+    templateUrl: 'app/views/ipbase.html'
 })
 export class IpBaseComponent implements OnInit {
 

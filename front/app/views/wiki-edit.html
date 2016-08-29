@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="content">
 
   <div class="col-md-6">
     <!-- Choose category -->
-    <label for="select">Catégorie</label>
-    <select id="select" name="select" [(ngModel)]="article.categoryId">
+    <label class="editCat" for="select">Catégorie</label>
+    <select class="editCat" id="select" name="select" [(ngModel)]="article.categoryId">
       <option *ngFor="let category of categories" [value]="category.id">{{category?.tag}}</option>
     </select>
     <br><br>
@@ -18,6 +18,8 @@
       <input id="author" type="text" class="form-control" placeholder="Auteur" aria-describedby="author" [(ngModel)]="article.author">
     </div>
     <br>
+    <a href class="question-circle"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i></a>
+    <br>
     <!-- Editor -->
     <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
     <!-- Save article -->
@@ -29,14 +31,7 @@
 
   <!-- Markdown preview -->
   <div class="col-md-6">
-    <div class="panel panel-default markup">
-      <div class="panel-heading markupH"><i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>&nbsp;Aide Markup</div>
-      <div class="panel-body">
-        **Bold Text**
-
-        //Italic Text//
-      </div>
-    </div>
+     
     <div class="panel aper"> Aperçu de la saisie</div>
     <span id="mdtext" [innerHTML]="articleMd"></span>
   </div>

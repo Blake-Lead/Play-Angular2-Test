@@ -1,7 +1,12 @@
 <div class="row topnav">
     <div class = "col-md-12">
         <div class="panel header">
+            <div class="col-md-11">
             The ToolBox
+            </div>
+            <div class="col-md-1">
+            <img src="app/images/leansys.png" class="logoLeansys" alt="logo_leansys">
+            </div>
         </div>
     </div>
 </div>
@@ -9,10 +14,10 @@
 
 <nav class="sidebar col-md-1">
     <ul class="list-group">
-        <a [routerLink]="['home']" class="list-group-item"><i class="fa fa-fw fa-dashboard"></i>HOME</a>
+        <a [routerLink]="['home']" class="list-group-item"><i class="fa fa-fw fa-dashboard"></i>&nbsp;HOME</a>
 
         <a class="list-group-item collapse panel-header" data-toggle="collapse" href="#id1">
-            <span><i class="fa fa-plus"></i>WIKI</span>
+            <span><i class="fa fa-plus"></i>&nbsp;WIKI</span>
             <div id="id1" class="panel-collapse collapse">
                 <ul class="list-group">
                     <li><a [routerLink]="['wiki/edit/0']" href><span>Ecrire</span></a></li>
@@ -21,12 +26,12 @@
             </div>
         </a>
 
-        <a [routerLink]="['ipbase']" class="list-group-item"><i class="fa fa-fw fa-bar-chart-o"></i>IPBASE</a>
-        <a [routerLink]="['registry']" class="list-group-item"><i class="fa fa-fw fa-table"></i>REGISTRY</a>
+        <a [routerLink]="['ipbase']" class="list-group-item"><i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;IPBASE</a>
+        <a [routerLink]="['registry']" class="list-group-item"><i class="fa fa-fw fa-table"></i>&nbsp;REGISTRY</a>
 
     </ul>
 </nav>
 
-<div class="content col-md-11">
+<div class="col-md-11">
     <router-outlet></router-outlet>
 </div>

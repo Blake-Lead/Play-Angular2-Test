@@ -8,8 +8,7 @@ import {Category}          from '../models/category';
 
 @Component({
     selector: 'wiki',
-    templateUrl: 'app/views/wiki-browse.html',
-    styleUrls: ['app/styles/style.css']
+    templateUrl: 'app/views/wiki-browse.html'
 })
 export class WikiBrowseComponent implements OnInit {
 

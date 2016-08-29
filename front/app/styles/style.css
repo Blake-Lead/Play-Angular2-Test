@@ -71,6 +71,10 @@ a {
 	font-family: 'Poppins', sans-serif;
 }
 
+.logoLeansys {
+	width: 25%;
+	margin-left: 85px;
+}
 
 
 /**********************************SIDEBAR***************************************/
@@ -147,6 +151,10 @@ a.list-group-item:hover {
 
 /*****************************HOME***************************************/
 
+.couleur {
+	margin-top: 50px;
+}
+
 .prez {
 	font-size: 18px;
 	background-color: #1d1c1c!important;;
@@ -154,11 +162,14 @@ a.list-group-item:hover {
 	font-weight: bold;
 }
 
+
 .twitterA  {
 	background-color: #55a955!important;
 	color: white!important;
 	font-size: 18px;
 }
+
+
 
 .twitterL {
 	background-color: #558c7a!important;
@@ -166,15 +177,36 @@ a.list-group-item:hover {
 	font-size: 18px;
 }
 
+
 .linkedin {
 	background-color: #bd4949!important;
 	color: white!important;
 	font-size: 18px;
 }
 
+
 .site {
 	background-color: #FC9540!important;
 	color: white!important;
+	font-size: 18px;
+}
+
+
+a.link {
+	text-decoration:none;
+	color:white!important;
+	font-size: 18px;
+}
+
+a.link:hover {
+	text-decoration:none;
+	color:white!important;
+	font-size: 18px;
+}
+
+a.link:visited {
+	text-decoration:none;
+	color:white!important;
 	font-size: 18px;
 }
 
@@ -214,8 +246,13 @@ i.fa {
 /*****************************WIKI EDIT***************************************/
 
 
+.editCat {
+	font-size: 22px;
+}
+
 .fa-question-circle {
 	color: #FC9540!important;
+	font-size: 25px;
 }
 
 .markup {
@@ -275,9 +312,6 @@ i.fa {
 
 }
 
-.fa-plus-circle{
-	font-family: 'Poppins', sans-serif;
-}
 
 /*****************************WIKI BROWSE***************************************/
 

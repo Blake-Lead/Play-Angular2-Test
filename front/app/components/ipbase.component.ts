@@ -43,7 +43,7 @@ export class IpBaseComponent implements OnInit {
         .subscribe(res => {
             if (res === 'true') {
                 this.address = new Address;
-                window.location.reload();
+                this.ipBaseService.getAddresses().subscribe(add => this.addresses = add, error => console.log(error));
             }
         }, err => console.log(err));
     }
@@ -53,7 +53,7 @@ export class IpBaseComponent implements OnInit {
         .subscribe(res => {
             if (res === 'true') {
                 this.addresses.splice(this.addresses.indexOf(this.addresses.find(add => add.id === this.idToDelete)), 1);
-                window.location.reload();
+                this.ipBaseService.getAddresses().subscribe(add => this.addresses = add, error => console.log(error));
             }
         }, err => console.log(err));
         this.idToDelete = -1;
@@ -64,7 +64,7 @@ export class IpBaseComponent implements OnInit {
         .subscribe(res => {
             if (res === 'true') {
                 this.group = new Group;
-                window.location.reload();
+                this.ipBaseService.getGroups().subscribe(groups => this.groups = groups, error => console.log(error));
             }
         }, err => console.log(err));
     }

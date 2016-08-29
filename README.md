@@ -20,7 +20,7 @@ You must have **docker** & **docker-compose** installed to create the database, 
 To deploy and run all project:
 
 ```
-make runAll
+make mytoolbox
 ```
 
 This command runs all the commands below so it is not necessary to execute them unless you know what you do.

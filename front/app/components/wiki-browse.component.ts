@@ -64,7 +64,7 @@ export class WikiBrowseComponent implements OnInit {
         .subscribe(res => {
             if (res === 'true') {
                 this.category = new Category;
-                window.location.reload();
+                this.wikiService.getCategories().subscribe(categories => this.categories = categories, error => console.log(error));
             }
         }, err => console.log(err));
     }

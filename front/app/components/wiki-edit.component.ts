@@ -48,11 +48,6 @@ export class WikiEditComponent implements OnInit {
     }
 
     saveArticle() {
-        console.log(this.article);
-        if (this.article.title == null || this.article.author == null || this.article.body == null || this.article.categoryId == null) {
-            console.log('Cannot save article : some fields are empty');
-            return;
-        }
         if (this.article.id === 0) {
             this.wikiService.createArticle(this.article).subscribe(resp => console.log(resp), error => console.log(error));
         }
@@ -60,6 +55,13 @@ export class WikiEditComponent implements OnInit {
             this.wikiService.updateArticle(this.article).subscribe(resp => console.log(resp), error => console.log(error));
         }
         this.gotoWikiBrowse();
+    }
+
+
+    articleIsValid(a: Article) {
+        return (a.title != null && a.title.length < 41 &&
+            a.author != null && a.author.length < 41 &&
+            a.body != null && a.categoryId != null);
     }
 
     gotoWikiBrowse() {

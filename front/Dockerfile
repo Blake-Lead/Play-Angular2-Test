@@ -4,6 +4,7 @@ FROM nginx:latest
 COPY ./dist /usr/share/nginx/html/dist
 COPY ./app/views /usr/share/nginx/html/app/views
 COPY ./app/styles /usr/share/nginx/html/app/styles
+COPY ./app/images /usr/share/nginx/html/app/images
 COPY systemjs.config.js /usr/share/nginx/html
 COPY ./node_modules /usr/share/nginx/html/node_modules
 COPY index.html /usr/share/nginx/html

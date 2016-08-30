@@ -18,19 +18,19 @@
 					<h1>WIKI</h1>
 					<p>Wiki permet de créer des articles.....</p>
 					<p>
-						<a class="btn btn-primary" [routerLink]="['wiki/edit/0']" href role="button">Ecrire</a>
-						<a class="btn btn-primary" [routerLink]="['wiki/browse']" href role="button">Consulter</a>
+						<a class="btn btn-primary" (click)="gotoWikiEdit()" href="javascript:void(0)" role="button">Ecrire</a>
+						<a class="btn btn-primary" (click)="gotoWikiBrowse()" href="javascript:void(0)" role="button">Consulter</a>
 					</p>
 				</div>
 				<div class="jumbotron col-md-4">
 					<h1>IPBASE</h1>
 					<p>IpBase est un gestionnaire d'adresse ip....</p>
-					<p><a class="btn btn-primary" [routerLink]="['ipbase']" href role="button">Voir</a></p>
+					<p><a class="btn btn-primary" (click)="gotoIpBase()" href="javascript:void(0)" role="button">Voir</a></p>
 				</div>
 				<div class="jumbotron col-md-4">
 					<h1>REGISTRY</h1>
 					<p>Application en cours de développement....</p>
-					<p><a class="btn btn-primary" [routerLink]="['ipbase']" href role="button">Voir</a></p>
+					<p><a class="btn btn-primary" (click)="gotoRegistry()" href="javascript:void(0)" role="button">Voir</a></p>
 				</div>
 			</div>
 		</div>

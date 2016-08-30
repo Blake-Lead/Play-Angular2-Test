@@ -4,7 +4,7 @@
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
             <button type="button" class="btn btn-success" (click)="editArticle()">Editer</button>
-            <button type="button" class="btn btn-danger" (click)="deleteArticle()">Supprimer</button>
+            <button type="button" class="btn btn-danger" (click)="deleteArticleModal.open()">Supprimer</button>
         </div>
     </div>
     <div class="panel-body">
@@ -14,3 +14,16 @@
   </div>
 </div>
 </div>
+
+<modal [animation]="true" [keyboard]="true" (onClose)="onCloseDeleteArticleModal($event)" #deleteArticleModal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">Suppression d'un article</h4>
+  </modal-header>
+  <modal-body>
+    <h5>Etes-vous sûr de vouloir supprimer cet article ?</h5>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="deleteArticleModal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-primary" (click)="deleteArticleModal.close()">Confirmer</button>
+  </modal-footer>
+</modal>

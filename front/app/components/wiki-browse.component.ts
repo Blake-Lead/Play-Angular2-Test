@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ModalResult}       from 'ng2-bs3-modal/ng2-bs3-modal';
-import {WikiService}       from '../services/wiki.service';
-import {MarkedService}     from '../services/marked.service';
-import {Router}            from '@angular/router';
-import {Article}           from '../models/article';
-import {Category}          from '../models/category';
+import {Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {ModalResult}                           from 'ng2-bs3-modal/ng2-bs3-modal';
+import {WikiService}                           from '../services/wiki.service';
+import {MarkedService}                         from '../services/marked.service';
+import {Router}                                from '@angular/router';
+import {Article}                               from '../models/article';
+import {Category}                              from '../models/category';
 
 @Component({
     selector: 'wiki',
@@ -15,8 +15,9 @@ export class WikiBrowseComponent implements OnInit {
     articles: Article[];
     categories: Category[];
     category: Category;
+    idToDelete: number;
 
-    constructor(private wikiService: WikiService, private markedService: MarkedService, private router: Router) {
+    constructor(private ref: ChangeDetectorRef, private wikiService: WikiService, private markedService: MarkedService, private router: Router) {
         this.articles = new Array<Article>();
         this.categories = new Array<Category>();
         this.category = new Category;
@@ -54,7 +55,12 @@ export class WikiBrowseComponent implements OnInit {
         this.wikiService.deleteArticle(id)
         .subscribe(resp => {
             console.log(resp);
-            location.reload();
+            this.wikiService.getArticles()
+            .subscribe(articles => {
+                this.articles = articles;
+                this.ref.detectChanges();
+            },
+            error => console.log(error));
         },
         error => console.log(error));
     }
@@ -62,10 +68,17 @@ export class WikiBrowseComponent implements OnInit {
     onCloseAddCategoryModal(result: ModalResult) {
         this.wikiService.createCategory(this.category)
         .subscribe(res => {
-            if (res === 'true') {
-                this.category = new Category;
-                this.wikiService.getCategories().subscribe(categories => this.categories = categories, error => console.log(error));
-            }
+            this.wikiService.getCategories().subscribe(categories => this.categories = categories, error => console.log(error));
+            this.category = new Category;
         }, err => console.log(err));
+    }
+
+    onCloseDeleteArticleModal(result: ModalResult) {
+        this.deleteArticle(this.idToDelete);
+    }
+
+    categoryIsValid(c: Category) {
+        return (c.tag != null && c.tag.length < 41 &&
+            c.description != null && c.description.length < 100);
     }
 }

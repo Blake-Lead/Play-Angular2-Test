@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {WikiService} from '../services/wiki.service';
-import {MarkedService} from '../services/marked.service';
-import {ActivatedRoute} from '@angular/router';
-import {Router} from '@angular/router';
-import {Article} from '../models/article';
-import {Category} from '../models/category';
+import {ModalResult}       from 'ng2-bs3-modal/ng2-bs3-modal';
+import {WikiService}       from '../services/wiki.service';
+import {MarkedService}     from '../services/marked.service';
+import {ActivatedRoute}    from '@angular/router';
+import {Router}            from '@angular/router';
+import {Article}           from '../models/article';
+import {Category}          from '../models/category';
 
 @Component({
     selector: 'wiki-view',
@@ -37,6 +38,11 @@ export class WikiViewComponent implements OnInit {
 
     deleteArticle() {
         this.wikiService.deleteArticle(this.article.id).subscribe(resp => console.log(resp), error => console.log(error));
+    }
+
+    onCloseDeleteArticleModal(result: ModalResult) {
+        this.deleteArticle();
+        this.router.navigate(['wiki/browse']);
     }
 
     editArticle() {

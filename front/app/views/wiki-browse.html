@@ -49,7 +49,7 @@
           <h3 class="artTitre">{{article.title}}</h3>
           <p [innerHTML]="parseMarkdown(article.body.substring(0,100)+' . . .')"></p>
           <p><a class="btn btn-primary" role="button" (click)="editArticle(article.id)">Editer</a>
-            <a class="btn btn-default" role="button" (click)="deleteArticle(article.id)">Supprimer</a></p>
+            <a class="btn btn-default" role="button" (click)="deleteArticleModal.open();idToDelete=article.id">Supprimer</a></p>
           </div>
         </div>
       </div>
@@ -59,8 +59,8 @@
 
 <modal [animation]="true" [keyboard]="true" (onClose)="onCloseAddCategoryModal($event)" #addCategoryModal>
   <modal-header [show-close]="true">
-    <h4 class="modal-title">Ajouter une catégorie</h4>
   </modal-header>
+  <h4 class="modal-title">Ajouter une catégorie</h4>
   <modal-body>
     <div class="form-group">
       <label for="tag">Nom</label>
@@ -71,6 +71,19 @@
   </modal-body>
   <modal-footer>
     <button type="button" class="btn btn-default" data-dismiss="modal" (click)="addCategoryModal.dismiss()">Annuler</button>
-    <button type="button" class="btn btn-primary" (click)="addCategoryModal.close()">Ajouter</button>
+    <button type="button" class="btn btn-primary" (click)="addCategoryModal.close()" [disabled]="!categoryIsValid(category)">Ajouter</button>
+  </modal-footer>
+</modal>
+
+<modal [animation]="true" [keyboard]="true" (onClose)="onCloseDeleteArticleModal($event)" #deleteArticleModal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">Suppression d'un article</h4>
+  </modal-header>
+  <modal-body>
+    <h5>Etes-vous sûr de vouloir supprimer cet article ?</h5>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="deleteArticleModal.dismiss()">Annuler</button>
+    <button type="button" class="btn btn-primary" (click)="deleteArticleModal.close()">Confirmer</button>
   </modal-footer>
 </modal>

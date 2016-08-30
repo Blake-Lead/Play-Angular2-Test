@@ -25,7 +25,7 @@
     <textarea id="rawtext" class="form-control" rows="20" #text [(ngModel)]="article.body" (keyup)="parseMarkdown(text.value)"></textarea>
     <!-- Save article -->
     <div class="btn-group" role="group">
-      <button type="button" class="btn btn-success" (click)="saveArticle()">Enregistrer</button>
+      <button type="button" class="btn btn-success" (click)="saveArticle()" [disabled]="!articleIsValid(article)">Enregistrer</button>
       <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
     </div>
   </div>

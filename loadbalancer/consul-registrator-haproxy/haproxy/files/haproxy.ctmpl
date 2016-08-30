@@ -1,0 +1,51 @@
+global
+    log 127.0.0.1   local0
+    log 127.0.0.1   local1 notice
+    daemon
+    maxconn 4096
+    stats timeout 30s
+
+defaults
+    log global
+    option httplog
+    option dontlognull
+    mode http
+    timeout connect 5000ms
+    timeout client  50000ms
+    timeout server  50000ms
+
+# HAProxy statistics page
+listen stats
+    bind *:1936
+    mode http
+    stats enable
+    stats uri /
+    stats hide-version
+    stats realm HAProxy\ Statistics
+    stats auth admin:123123q
+
+# WIKI
+frontend wiki-front
+    bind *:10070
+    mode http
+    use_backend wiki-back
+backend wiki-back
+    option forwardfor
+    http-request set-header X-Forwarded-Port %[dst_port]
+    http-request add-header X-Forwarded-Proto https if { ssl_fc }
+    option httpchk HEAD /
+    balance roundrobin{{range service "wikiservice"}}
+    server {{.Node}} {{.Address}}:{{.Port}}{{end}}
+
+# IPBASE
+frontend ipbase-front
+    bind *:10080
+    mode http
+    use_backend ipbase-back
+backend ipbase-back
+    option forwardfor
+    http-request set-header X-Forwarded-Port %[dst_port]
+    http-request add-header X-Forwarded-Proto https if { ssl_fc }
+    option httpchk HEAD /
+    balance roundrobin{{range service "ipbaseservice"}}
+    server {{.Node}} {{.Address}}:{{.Port}}{{end}}

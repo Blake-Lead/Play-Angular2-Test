@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+
+  haproxy:
+    build: ./haproxy/
+    container_name: haproxy
+    image: haproxy-consultemplate
+    restart: always
+    links:
+    - consul
+    ports:
+    - "1936:1936"
+    - "10070:10070"
+    - "10080:10080"
+
+  consul:
+    image: progrium/consul
+    container_name: consul
+    hostname: consul
+    restart: always
+    command: "-server -bootstrap -advertise=172.17.0.1"
+    ports:
+      - 8300:8300
+      - 8400:8400
+      - 8500:8500
+      - 8600:53/udp
+
+  registrator:
+    image: gliderlabs/registrator
+    container_name: registrator
+    hostname: registrator
+    restart: always
+    command: "-ip=172.17.0.1 consul://consul:8500"
+    links:
+    - consul
+    volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock"

@@ -65,7 +65,7 @@ export class WikiEditComponent implements OnInit {
     }
 
     gotoWikiBrowse() {
-        let link = ['wiki/browse'];
+        let link = ['home'];
         this.router.navigate(link);
     }
 

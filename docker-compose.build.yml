@@ -16,3 +16,7 @@ services:
   ui:
     build: ./front
     image: mytoolbox/ui
+
+  hap-base:
+    build: ./loadbalancer/haproxy
+    image: training/haproxy

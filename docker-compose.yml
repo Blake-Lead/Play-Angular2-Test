@@ -6,6 +6,8 @@ services:
     environment:
       - POSTGRES_USER=afpauser
       - POSTGRES_PASSWORD=password
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
     expose:
       - 5432
 
@@ -13,19 +15,23 @@ services:
     image: mytoolbox/wiki
     links:
       - db
+      - consul
     environment:
       - PLAY_CRYPTO_SECRET="6CTf:G3gf:90Latabg@5241AB/R5W:1uDFN];Ik@nQCY?tAnfk?aZ?iwrNwnxIlR"
+      - SERVICE_NAME=wikiservice
     ports:
-      - 9010:9000
+      - 9000
 
   ipbase:
     image: mytoolbox/ipbase
     links:
       - db
+      - consul
     environment:
       - PLAY_CRYPTO_SECRET="QCY?tAnfk?aZ?iwrNwnxIlR6CTf:G3gf:90Latabg@5241AB/R5W:1uDFN];Ik@n"
+      - SERVICE_NAME=ipbaseservice
     ports:
-      - 9011:9000
+      - 9000
 
   ui:
     image: mytoolbox/ui
@@ -33,9 +39,44 @@ services:
       - wiki
       - ipbase
     environment:
-      - WIKI_URL=wiki:9000
-      - IPBASE_URL=ipbase:9000
+      - WIKI_URL=172.17.0.1:10070
+      - IPBASE_URL=172.17.0.1:10080
     expose:
       - 80
     ports:
       - 80:80
+
+  haproxy:
+    build: ./loadbalancer/consul-registrator-haproxy/haproxy/
+    container_name: haproxy
+    image: haproxy-consultemplate
+    restart: always
+    links:
+    - consul
+    ports:
+    - "1936:1936"
+    - "10070:10070"
+    - "10080:10080"
+
+  consul:
+    image: progrium/consul
+    container_name: consul
+    hostname: consul
+    restart: always
+    command: "-server -bootstrap -advertise=172.17.0.1"
+    ports:
+      - 8300:8300
+      - 8400:8400
+      - 8500:8500
+      - 8600:53/udp
+
+  registrator:
+    image: gliderlabs/registrator
+    container_name: registrator
+    hostname: registrator
+    restart: always
+    command: "-ip=172.17.0.1 consul://consul:8500"
+    links:
+    - consul
+    volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock"

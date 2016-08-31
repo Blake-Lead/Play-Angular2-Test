@@ -24,8 +24,7 @@
                     <th style="width: 15%">IP</th>
                     <th style="width: 10%">Port</th>
                     <th style="width: 45%">Description</th>
-                    <th style="width: 10%">Groupe</th>
-                    <th style="width: 10%">Aller à</th>
+                    <th style="width: 15%">Groupe</th>
                     <th style="width: 15%">Supprimer</th>
                     <th></th>
                 </tr>
@@ -36,10 +35,6 @@
                     <td class="td-hover">{{address?.port}}</td>
                     <td>{{address?.description}}</td>
                     <td>{{getGroupName(address?.groupId)}}</td>
-                    <td>
-                        <a href="{{address?.ip}}:{{address?.port}}" target="blank"><i class="fa fa-check" aria-hidden="true"></i>
-                        </a>
-                    </td>
                     <td class="trash">
                         <button type="button" class="btn btn-xs btn-danger"
                         (click)="deleteModal.open();idToDelete=address.id">

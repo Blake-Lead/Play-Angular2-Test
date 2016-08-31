@@ -1,18 +1,20 @@
 <div class="content">
+<div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
-            <button type="button" class="btn btn-success" (click)="editArticle()">Editer</button>
-            <button type="button" class="btn btn-danger" (click)="deleteArticleModal.open()">Supprimer</button>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-warning" (click)="goBack()">Retour</button>
+          <button type="button" class="btn btn-success" (click)="editArticle()">Editer</button>
+          <button type="button" class="btn btn-danger" (click)="deleteArticleModal.open()">Supprimer</button>
         </div>
+      </div>
+      <div class="panel-body">
+        <span [innerHTML]="articleMd"></span>
+        <br><br>
+        <h4 style="font-style: italic">{{article?.author}}</h4>
+      </div>
     </div>
-    <div class="panel-body">
-      <span [innerHTML]="articleMd"></span>
-      <br><br>
-      <h4 style="font-style: italic">{{article?.author}}</h4>
   </div>
-</div>
 </div>
 
 <modal [animation]="true" [keyboard]="true" (onClose)="onCloseDeleteArticleModal($event)" #deleteArticleModal>

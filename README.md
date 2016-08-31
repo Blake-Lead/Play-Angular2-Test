@@ -61,3 +61,7 @@ docker-compose up -d <db, wiki, ipbase or ui>
 
 
 Of course, you can build & run each application independently, but it could mean changing some parts of the code. If you have questions about that, feel free to ask.
+
+***
+
+It is now possible to scale containers, UI doesn't communicate with APIs directlyanymore but pass through HAProxy Load Balancer with round robin load balancing enabled.
